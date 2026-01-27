@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dynamic Donut Theme System - Vibrant Multi-Color */
+    --donut-primary: 185 75% 55%;
+    --donut-secondary: 175 80% 60%;
+    --donut-accent: 195 65% 75%;
+    --donut-glow: 180 90% 70%;
+
+    /* Background gradients - Vibrant and sweet */
+    --gradient-start: 185 55% 92%;
+    --gradient-mid: 45 50% 90%;
+    --gradient-end: 320 40% 94%;
+
+    /* Core tokens - Fresh and vibrant */
+    --background: 180 40% 97%;
+    --foreground: 220 30% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 20%;
+
+    --primary: 185 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 50% 92%;
+    --secondary-foreground: 40 30% 25%;
+
+    --muted: 200 15% 94%;
+    --muted-foreground: 200 15% 45%;
+
+    --accent: 320 45% 90%;
+    --accent-foreground: 320 45% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 25% 88%;
+    --input: 200 25% 88%;
+    --ring: 185 75% 50%;
+
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    /* Sprinkle colors - Rainbow sweet palette */
+    --sprinkle-1: 340 85% 60%;
+    --sprinkle-2: 185 90% 50%;
+    --sprinkle-3: 45 95% 55%;
+    --sprinkle-4: 280 75% 55%;
+    --sprinkle-5: 140 70% 45%;
+
+    /* Animation timing */
+    --transition-smooth: cubic-bezier(0.33, 1, 0.68, 1);
+    --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Blue Donut Theme - Ocean/Turquoise with warm accents */
+  [data-theme="blue"] {
+    --donut-primary: 185 85% 50%;
+    --donut-secondary: 175 75% 55%;
+    --donut-accent: 195 60% 75%;
+    --donut-glow: 180 90% 65%;
+
+    --gradient-start: 185 50% 88%;
+    --gradient-mid: 195 55% 92%;
+    --gradient-end: 175 45% 95%;
+
+    --background: 185 40% 96%;
+    --foreground: 200 35% 15%;
+
+    --primary: 185 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 45% 92%;
+    --secondary-foreground: 200 35% 25%;
+
+    --muted: 190 25% 93%;
+    --muted-foreground: 195 20% 45%;
+
+    --accent: 175 50% 88%;
+    --accent-foreground: 185 50% 22%;
+
+    --border: 190 35% 85%;
+    --ring: 185 85% 45%;
+  }
+
+  /* Yellow Donut Theme - Golden honey with caramel */
+  [data-theme="yellow"] {
+    --donut-primary: 42 95% 55%;
+    --donut-secondary: 35 90% 60%;
+    --donut-accent: 50 80% 75%;
+    --donut-glow: 45 100% 65%;
+
+    --gradient-start: 45 65% 90%;
+    --gradient-mid: 38 55% 88%;
+    --gradient-end: 50 50% 94%;
+
+    --background: 45 55% 97%;
+    --foreground: 30 45% 15%;
+
+    --primary: 42 95% 50%;
+    --primary-foreground: 30 50% 12%;
+
+    --secondary: 38 55% 92%;
+    --secondary-foreground: 35 40% 25%;
+
+    --muted: 45 30% 93%;
+    --muted-foreground: 40 25% 45%;
+
+    --accent: 50 60% 88%;
+    --accent-foreground: 40 50% 22%;
+
+    --border: 42 40% 85%;
+    --ring: 42 95% 50%;
+  }
+
+  /* Purple Donut Theme - Berry magic with grape */
+  [data-theme="purple"] {
+    --donut-primary: 280 75% 55%;
+    --donut-secondary: 290 70% 62%;
+    --donut-accent: 270 55% 78%;
+    --donut-glow: 285 85% 68%;
+
+    --gradient-start: 280 50% 92%;
+    --gradient-mid: 290 45% 90%;
+    --gradient-end: 270 40% 95%;
+
+    --background: 280 40% 97%;
+    --foreground: 280 35% 15%;
+
+    --primary: 280 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 290 45% 92%;
+    --secondary-foreground: 280 35% 25%;
+
+    --muted: 275 25% 93%;
+    --muted-foreground: 280 22% 45%;
+
+    --accent: 270 45% 88%;
+    --accent-foreground: 275 40% 22%;
+
+    --border: 285 35% 85%;
+    --ring: 280 75% 50%;
+  }
+
+  /* Pink Donut Theme - Strawberry cream with lighter pink */
+  [data-theme="pink"] {
+    --donut-primary: 345 80% 60%;
+    --donut-secondary: 355 75% 68%;
+    --donut-accent: 340 55% 80%;
+    --donut-glow: 350 90% 72%;
+
+    --gradient-start: 345 55% 92%;
+    --gradient-mid: 355 50% 90%;
+    --gradient-end: 185 40% 94%;
+
+    --background: 350 45% 97%;
+    --foreground: 340 30% 18%;
+
+    --primary: 345 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 355 40% 92%;
+    --secondary-foreground: 345 30% 28%;
+
+    --muted: 345 20% 93%;
+    --muted-foreground: 350 18% 48%;
+
+    --accent: 340 45% 88%;
+    --accent-foreground: 345 45% 22%;
+
+    --border: 350 30% 86%;
+    --ring: 345 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    transition: background-color 0.8s var(--transition-expo),
+      color 0.6s var(--transition-expo);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+
+  /* Animated gradient background */
+  .gradient-background {
+    background: linear-gradient(135deg,
+        hsl(var(--gradient-start)) 0%,
+        hsl(var(--gradient-mid)) 50%,
+        hsl(var(--gradient-end)) 100%);
+    transition: background 1.2s var(--transition-expo);
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: hsla(var(--card), 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--border), 0.5);
+    box-shadow:
+      0 8px 32px hsla(var(--donut-primary), 0.1),
+      0 2px 8px hsla(var(--foreground), 0.05);
+  }
+
+  /* Liquid button */
+  .btn-liquid {
+    position: relative;
+    background: linear-gradient(135deg,
+        hsl(var(--donut-primary)) 0%,
+        hsl(var(--donut-secondary)) 100%);
+    color: hsl(var(--primary-foreground));
+    border-radius: 9999px;
+    overflow: hidden;
+    transition: transform 0.3s var(--transition-bounce),
+      box-shadow 0.4s var(--transition-expo);
+  }
+
+  .btn-liquid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        hsla(255, 100%, 100%, 0.3) 0%,
+        transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-liquid:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow:
+      0 20px 40px hsla(var(--donut-primary), 0.4),
+      0 8px 16px hsla(var(--donut-glow), 0.3);
+  }
+
+  .btn-liquid:hover::before {
+    opacity: 1;
+  }
+
+  .btn-liquid:active {
+    transform: scale(0.98);
+  }
+
+  /* Floating animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-animation-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .float-animation-slow {
+    animation: float 8s ease-in-out infinite 1s;
+  }
+
+  /* Glow effect */
+  .donut-glow {
+    filter: drop-shadow(0 0 30px hsla(var(--donut-glow), 0.5)) drop-shadow(0 0 60px hsla(var(--donut-primary), 0.3));
+    transition: filter 0.8s var(--transition-expo);
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg,
+        hsl(var(--donut-primary)) 0%,
+        hsl(var(--donut-secondary)) 50%,
+        hsl(var(--donut-glow)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Chocolate text effect */
+  .text-chocolate {
+    color: #5D4037;
+    text-shadow:
+      2px 2px 0px #3E2723,
+      4px 4px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  }
+
+  .text-chocolate::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 60%;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 9999px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Sprinkle particle */
+  .sprinkle {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    border-radius: 9999px;
+    animation: sprinkle-fall linear infinite;
+  }
+
+  /* Section reveal */
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s var(--transition-expo),
+      transform 0.8s var(--transition-expo);
+  }
+
+  .reveal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Icing drip */
+  .icing-drip {
+    position: relative;
+  }
+
+  .icing-drip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 80px;
+    background: hsl(var(--donut-secondary));
+    border-radius: 0 0 30px 30px;
+    animation: drip 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+
+  /* Smooth theme transition for all elements */
+  .theme-transition {
+    transition:
+      background-color 0.8s var(--transition-expo),
+      border-color 0.6s var(--transition-expo),
+      color 0.5s var(--transition-expo),
+      box-shadow 0.6s var(--transition-expo);
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+}
+
+@keyframes sprinkle-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes drip {
+
+  0%,
+  100% {
+    height: 80px;
+    opacity: 0.8;
+  }
+
+  50% {
+    height: 120px;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 30px hsla(var(--donut-glow), 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 50px hsla(var(--donut-glow), 0.8));
+  }
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+.scroll-indicator {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Canvas styling */
+canvas {
+  touch-action: none;
+}
+
+/* Lenis Smooth Scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Ensure no black gaps */
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(var(--background));
+  /* Fallback */
+}
